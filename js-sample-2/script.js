@@ -1,3 +1,6 @@
+var touchNumber = 0;
+
 function handleTouch() {
-  alert('Touched!');
+  touchNumber = touchNumber + 1;
+  document.getElementById('score-value').innerText = touchNumber;
 }
