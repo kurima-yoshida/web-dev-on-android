@@ -1,19 +1,19 @@
 var gameState = 'title';
 var elapsedSeconds = 0;
 var gameTimer = null;
-var clickNumber = 0;
-var highScoreClickNumber = 0;
+var touchNumber = 0;
+var highScoreTouchNumber = 0;
 
 function handleTouch() {
     if (gameState === 'title') {
         gameState = 'beforeGame'
         elapsedSeconds = 0;
         gameTimer = setInterval(handleTimer, 1000);
-        clickNumber = 0;
+        touchNumber = 0;
     } else if (gameState === 'game') {
-        clickNumber++;
-        if (clickNumber > highScoreClickNumber) {
-            highScoreClickNumber = clickNumber;
+        touchNumber++;
+        if (touchNumber > highScoreTouchNumber) {
+            highScoreTouchNumber = touchNumber;
         }
     } else if (gameState === 'result') {
         gameState = 'title'
@@ -51,8 +51,8 @@ function updateScreen() {
         document.getElementById('high-score').style.display = 'block';    
         var remainingTime = 1 + 10 - elapsedSeconds;
         document.getElementById('remaining-time-value').innerText = remainingTime;    
-        document.getElementById('score-value').innerText = clickNumber;    
-        document.getElementById('high-score-value').innerText = highScoreClickNumber;    
+        document.getElementById('score-value').innerText = touchNumber;    
+        document.getElementById('high-score-value').innerText = highScoreTouchNumber;    
     } else if (gameState === 'afterGame') {
         document.getElementById('remaining-time-value').innerText = 0;
     } else if (gameState === 'result') {
