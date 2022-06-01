@@ -1,4 +1,4 @@
-var touchNumber = 0;
+let touchNumber = 0;
 
 function handleTouch() {
   touchNumber = touchNumber + 1;

@@ -1,8 +1,8 @@
-var gameState = 'title';
-var elapsedSeconds = 0;
-var gameTimer = null;
-var touchNumber = 0;
-var highScoreTouchNumber = 0;
+let gameState = 'title';
+let elapsedSeconds = 0;
+let gameTimer = null;
+let touchNumber = 0;
+let highScoreTouchNumber = 0;
 
 function handleTouch() {
     if (gameState === 'title') {
@@ -49,7 +49,7 @@ function updateScreen() {
         document.getElementById('remaining-time').style.display = 'block';    
         document.getElementById('score').style.display = 'block';    
         document.getElementById('high-score').style.display = 'block';    
-        var remainingTime = 1 + 10 - elapsedSeconds;
+        let remainingTime = 1 + 10 - elapsedSeconds;
         document.getElementById('remaining-time-value').innerText = remainingTime;    
         document.getElementById('score-value').innerText = touchNumber;    
         document.getElementById('high-score-value').innerText = highScoreTouchNumber;    
