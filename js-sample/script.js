@@ -1,3 +1,3 @@
 function handleTouch() {
-  alert('Touched!');
+  alert("Touched!");
 }
